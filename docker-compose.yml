@@ -1,0 +1,14 @@
+services:
+  xeellit-bot:
+    image: nodejs
+    restart: unless-stopped
+    build:
+        context: .
+        dockerfile: Dockerfile
+    networks:
+        - network
+    env_file:
+        - .env
+
+networks:
+    network:
